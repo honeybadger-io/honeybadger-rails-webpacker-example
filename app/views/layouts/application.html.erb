@@ -3,9 +3,16 @@
   <head>
     <title>HoneybadgerRailsWebpackerExample</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'honeybadger',
+          :'data-apiKey' => ENV["HONEYBADGER_API_KEY"],
+          :'data-environment' => Rails.env,
+          :'data-revision' => Git::REVISION,
+          :'data-debug' => true %>
+
+    <%= javascript_pack_tag 'hello' %>
   </head>
 
   <body>
