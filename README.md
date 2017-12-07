@@ -2,17 +2,14 @@
 
 An example Rails 5.1.4 application demonstrating honeybadger's webpack plugin
 to emit a source map to un-minify javascript. The source map is loaded to the
-honeybadger API allowing javascript exception reporting.
+honeybadger API allowing javascript exception reporting with correct references
+to un-minified javascript.
 
 This example application was originally created with the rails new command
 
 ```
 rails new . --webpack --skip-active-record --skip-action-mailer
 ```
-
-## Honeybadger webpack plugin
-
-## TODO: explanation
 
 ## Demonstration
 
@@ -49,7 +46,7 @@ Honeybadger.
 ## Heroku / 12-factor app
 
 This example application is ready to run out on Heroku (or any other 12-factor
-app using ENV VARs) given these deployment notes.
+app using ENV VARs as in the .env example) given these deployment notes.
 
 A git post commit hook can be utilzied to set a revision environment variable
 at Heroku that is utilized in `config/webpack/environment.js` to set the

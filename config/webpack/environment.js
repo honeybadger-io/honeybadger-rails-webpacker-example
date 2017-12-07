@@ -6,8 +6,8 @@ const revision = process.env.GIT_COMMIT || 'master' // See 12-factor app / Herok
 environment.plugins.set(
   'HoneybadgerSourceMap',
   new HoneybadgerSourceMapPlugin({
-    api_key: process.env.HONEYBADGER_API_KEY,
-    assets_url: process.env.ASSETS_URL,
+    apiKey: process.env.HONEYBADGER_API_KEY,
+    assetsUrl: process.env.ASSETS_URL,
     silent: false,
     ignoreErrors: false,
     revision: revision

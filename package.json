@@ -2,7 +2,7 @@
   "name": "honeybadger-rails-webpacker-example",
   "private": true,
   "dependencies": {
-    "@honeybadger-io/webpack": "^1.0.3",
+    "@honeybadger-io/webpack": "^1.0.4",
     "@rails/webpacker": "^3.0.2",
     "babel-cli": "^6.26.0",
     "coffeescript": "1.12.7"

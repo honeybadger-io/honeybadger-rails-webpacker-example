@@ -17,6 +17,7 @@ const Hello = {
     var node = document.getElementById("hello");
     var value = node.innerHTML;
     var abc = Hello.abc();
+    console.log(abc);
     node.innerHTML = value + " " + abc;
   },
 
