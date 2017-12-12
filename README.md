@@ -27,7 +27,7 @@ project's dotenv file `.env`. If your api key is abc123 then the entry in
 `.env` will be `HONEYBADGER_API_KEY=abc123`.
 
 A very simple webpack style javascript example can be found in
-`app/javascript/src/hello.js`. It can be compiled with the webpacker compile
+`app/javascript/src/main.js`. It can be compiled with the webpacker compile
 task `rake webpacker:compile` and will be automatically compiled by the rails
 server in development mode.
 
