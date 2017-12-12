@@ -1,4 +1,4 @@
-var Honeybadger = require("honeybadger-js/honeybadger");
+var Honeybadger = require('honeybadger-js/honeybadger');
 
 Honeybadger.configure({
   apiKey: process.env.HONEYBADGER_API_KEY,
@@ -7,27 +7,27 @@ Honeybadger.configure({
   debug: true
 });
 
-const Hello = {
+const Main = {
   initialize() {
     var abcNode = document.getElementById('abc');
     var boomNode = document.getElementById('boom');
 
     abcNode.addEventListener('click', (event) => {
       event.preventDefault();
-      Hello.example();
+      Main.example();
     });
     boomNode.addEventListener('click', (event) => {
       event.preventDefault();
-      Hello.boom();
+      Main.boom();
     });
   },
 
   example: function () {
-    var node = document.getElementById("hello");
+    var node = document.getElementById('hello');
     var value = node.innerHTML;
-    var abc = Hello.abc();
+    var abc = Main.abc();
     console.log(abc);
-    node.innerHTML = value + " " + abc;
+    node.innerHTML = value + ' ' + abc;
   },
 
   abc: function() {
@@ -47,10 +47,10 @@ const Hello = {
   },
 
   boom: function() {
-    throw "boom";
+    throw 'boom';
   }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  Hello.initialize();
+  Main.initialize();
 });
