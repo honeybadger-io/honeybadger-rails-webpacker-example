@@ -5,7 +5,8 @@
     "@honeybadger-io/webpack": "^1.0.4",
     "@rails/webpacker": "^3.0.2",
     "babel-cli": "^6.26.0",
-    "coffeescript": "1.12.7"
+    "coffeescript": "1.12.7",
+    "honeybadger-js": "^0.5.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.4"

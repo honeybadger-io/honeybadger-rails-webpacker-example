@@ -1,3 +1,12 @@
+var Honeybadger = require("honeybadger-js/honeybadger");
+
+Honeybadger.configure({
+  apiKey: process.env.HONEYBADGER_API_KEY,
+  environment: process.env.RAILS_ENV || 'development',
+  revision: process.env.GIT_COMMIT || 'master',
+  debug: true
+});
+
 const Hello = {
   initialize() {
     var abcNode = document.getElementById('abc');
