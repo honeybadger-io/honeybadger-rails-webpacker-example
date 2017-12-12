@@ -1,4 +1,4 @@
-# Honeybadger Rails+Webpacker+Source Maps Example
+# Honeybadger+Rails+Webpacker+Source Maps Example
 
 An example Rails 5.1/Webpacker application demonstrating honeybadger's webpack
 plugin to emit a source map to un-minify JavaScript. The source map is uploaded to
