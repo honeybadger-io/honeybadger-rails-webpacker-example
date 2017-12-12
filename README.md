@@ -81,3 +81,27 @@ See `config/webpack/development.js` webpacker's default `devtool` setting of
 environment when exceptions are sent to Honeybadger. The value is changed to
 `cheap-eval-source-map` to overcome that.
 
+
+## Development
+
+First, install needed dependencies:
+
+```sh
+bundle install
+yarn install --pure-lockfile
+```
+
+Then run the development servers:
+
+```sh
+./bin/rails server
+./bin/webpack-dev-server
+```
+
+Alternatively, [foreman](http://ddollar.github.io/foreman/) may be used to start
+both servers at once:
+
+```sh
+gem install foreman
+foreman start
+```
