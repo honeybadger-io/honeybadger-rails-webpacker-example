@@ -1,21 +1,21 @@
-# Honeybadger Weback Source Map Plugin Example App README
+# Honeybadger Rails+Webpacker+Source Maps Example
 
-An example Rails 5.1.4 application demonstrating honeybadger's webpack plugin
-to emit a source map to un-minify javascript. The source map is loaded to the
-honeybadger API allowing javascript exception reporting with correct references
-to un-minified javascript.
+An example Rails 5.1/Webpacker application demonstrating honeybadger's webpack
+plugin to emit a source map to un-minify JavaScript. The source map is uploaded to
+the Honeybadger API, allowing JavaScript exception reporting with correct
+references to un-minified JavaScript.
 
-This example application was originally created with the rails new command
+This example application was originally created with the rails new command:
 
-```
+```sh
 rails new . --webpack --skip-active-record --skip-action-mailer
 ```
 
 ## Demonstration
 
-Clone the example app, bundle install
+Clone the example app, bundle install:
 
-```
+```sh
 git clone https://github.com/honeybadger-io/honeybadger-rails-webpacker-example.git
 gem install bundler
 bundle install
@@ -26,18 +26,18 @@ Create a Honeybadger Project for your application in the Honeybadger panel at
 project's dotenv file `.env`. If your api key is abc123 then the entry in
 `.env` will be `HONEYBADGER_API_KEY=abc123`.
 
-A very simple webpack style javascript example can be found in
+A very simple webpack style JavaScript example can be found in
 `app/javascript/src/main.js`. It can be compiled with the webpacker compile
 task `rake webpacker:compile` and will be automatically compiled by the rails
-server in development mode.
+server in development mode:
 
-```
-rake webpacker:compile
-rails server
+```sh
+./bin/rake webpacker:compile
+./bin/rails server
 ```
 
 Open the application in your browser and open the browser's development console
-so you can see the application's javascript debug log lines. Click the `ABC`
+so you can see the application's JavaScript debug log lines. Click the `ABC`
 button for a simple code path that doesn't cause an exception. Click the `BOOM`
 button to cause the example exception path to execute. If your Honeybadger
 project has been correctly configured the `boom` exception should be sent to
@@ -52,7 +52,7 @@ A git post commit hook can be utilzied to set a revision environment variable
 at Heroku that is utilized in `config/webpack/environment.js` to set the
 revision variable in the `@honeybadger-io/webpack` plugin.
 
-```shell
+```sh
 # this is in .git/hooks/post-commit
 # be sure to
 # chmod +x .git/hooks/post-commit
@@ -63,13 +63,13 @@ heroku config:set GIT_COMMIT=$commit
 
 Set your Honeybadger API key in your app's heroku environment.
 
-```
+```sh
 heroku config:set HONEYBADGER_API_KEY=abcd1234
 ```
 
 Set ASSETS_URL to your applications base application directory
 
-```
+```sh
 heroku config:set ASSETS_URL=http://my-example.herokuapp.com/packs
 ```
 
