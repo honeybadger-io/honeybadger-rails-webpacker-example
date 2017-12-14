@@ -18,7 +18,7 @@ const Main = {
     });
     boomNode.addEventListener('click', (event) => {
       event.preventDefault();
-      Main.boom();
+      Main.abcBoom();
     });
   },
 
@@ -47,7 +47,13 @@ const Main = {
   },
 
   boom: function() {
-    throw 'boom';
+    var boom = 'boom';
+    throw boom;
+    return boom;
+  },
+
+  abcBoom: function() {
+    return this.a() + this.boom();
   }
 };
 
