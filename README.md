@@ -48,18 +48,36 @@ Honeybadger.
 This example application is ready to run out on Heroku (or any other 12-factor
 app using ENV VARs as in the .env example) given these deployment notes.
 
+### `GIT_COMMIT`
+
 In the example `app/javascript/src/main.js` the `revision` variable used in the
-call to the Honeybadger API is sourced via an environment variable
-`GIT_COMMIT`. When webpacker minifies the JavaScript it will use the value of
-that variable from the local environment it is run in. Should your
+call to the Honeybadger API by honeybadger-js is sourced via an environment
+variable `GIT_COMMIT`. When webpacker minifies the JavaScript it will use the
+value of that variable from the local environment it is run in. Should your
 implementation follow this pattern you will have to ensure a means of setting
 the current commit sha in your deployment environment.
+
+### `HONEYBADGER_API_KEY`
+
+In the example `app/javascript/src/main.js` the `apiKey` variable used in the
+call to the Honeybadger API by honeybadger-js is sourced via an environment
+variable `HONEYBADGER_API_KEY`. `HONEYBADGER_API_KEY` is also referenced by the
+webpack environment configuration of the Honeybadger Webpack plugin in
+`config/webpack/environment.js`
 
 Set your Honeybadger API key in your app's heroku environment.
 
 ```sh
 heroku config:set HONEYBADGER_API_KEY=abcd1234
 ```
+
+### `ASSETS_URL`
+
+In the webpack configuration `config/webpack/environment.js` the `assetsUrl`
+variable used to configure the Honeybadger Webpack Sourcement Plugin is sourced
+via the environment variable `ASSETS_URL`.d See the Honeybadger Webpack plugin's
+README https://github.com/honeybadger-io/honeybadger-webpack for explanation of
+the plugin's configuration.
 
 Set ASSETS_URL to your applications base application directory
 
