@@ -48,18 +48,12 @@ Honeybadger.
 This example application is ready to run out on Heroku (or any other 12-factor
 app using ENV VARs as in the .env example) given these deployment notes.
 
-A git post commit hook can be utilzied to set a revision environment variable
-at Heroku that is utilized in `config/webpack/environment.js` to set the
-revision variable in the `@honeybadger-io/webpack` plugin.
-
-```sh
-# this is in .git/hooks/post-commit
-# be sure to
-# chmod +x .git/hooks/post-commit
-commit=$(git rev-parse HEAD)
-echo Setting Heroku GIT_COMMIT env var to $commit
-heroku config:set GIT_COMMIT=$commit
-```
+In the example `app/javascript/src/main.js` the `revision` variable used in the
+call to the Honeybadger API is sourced via an environment variable
+`GIT_COMMIT`. When webpacker minifies the JavaScript it will use the value of
+that variable from the local environment it is run in. Should your
+implementation follow this pattern you will have to ensure a means of setting
+the current commit sha in your deployment environment.
 
 Set your Honeybadger API key in your app's heroku environment.
 
