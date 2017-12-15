@@ -74,8 +74,8 @@ heroku config:set HONEYBADGER_API_KEY=abcd1234
 ### `ASSETS_URL`
 
 In the webpack configuration `config/webpack/environment.js` the `assetsUrl`
-variable used to configure the Honeybadger Webpack Sourcement Plugin is sourced
-via the environment variable `ASSETS_URL`.d See the Honeybadger Webpack plugin's
+variable used to configure the Honeybadger Webpack Source Map Plugin is sourced
+via the environment variable `ASSETS_URL`. See the Honeybadger Webpack plugin's
 README https://github.com/honeybadger-io/honeybadger-webpack for explanation of
 the plugin's configuration.
 
