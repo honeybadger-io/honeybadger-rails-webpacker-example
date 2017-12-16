@@ -1,8 +1,8 @@
-# Honeybadger+Rails+Webpacker+Source Maps Example
+# Honeybadger + Rails + Webpacker + Source Maps - Example Application
 
 An example Rails 5.1/Webpacker application demonstrating honeybadger's webpack
-plugin to emit a source map to un-minify JavaScript. The source map is uploaded to
-the Honeybadger API, allowing JavaScript exception reporting with correct
+plugin to emit a source map to un-minify JavaScript. The source map is uploaded
+to the Honeybadger API, allowing JavaScript exception reporting with correct
 references to un-minified JavaScript.
 
 This example application was originally created with the rails new command:
@@ -10,8 +10,17 @@ This example application was originally created with the rails new command:
 ```sh
 rails new . --webpack --skip-active-record --skip-action-mailer
 ```
+## Quick Start
 
-## Demonstration
+The easiest way to get started with this application is to deploy it to Heroku
+with the Heroku Button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+Note that once launched you will need to  set up your environment variables for
+Heroku per the instructions in the `Heroku / 12-factor app` section.
+
+## Slightly Less Quick Start
 
 Clone the example app, bundle install:
 
