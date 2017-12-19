@@ -1,13 +1,22 @@
 {
-  "name": "Honeybadger + Rails + Webpacker + Source Maps - Example Application",
+  "name": "Honeybadger Webpack App",
   "description": "An example Rails 5.1/Webpacker application demonstrating honeybadger's webpack plugin to emit a source map to un-minify JavaScript",
   "repository": "https://github.com/honeybadger-io/honeybadger-rails-webpacker-example.git",
   "logo": "https://honeybadger-static.s3.amazonaws.com/brand_assets/honeybadger_bolt/honeybadger_bolt.svg",
   "keywords": ["Rails", "Webpack", "Webpacker", "source map", "JavaScript", "Honeybadger"],
   "env": {
     "ASSETS_URL": {
-      "description": "assetsUrl parameter for Honeybader Webpack Source Map plugin",
-      "required": true
+      "description": "'assetsUrl' parameter for Honeybader Webpack Source Map plugin, change to match your environment by changing YOUR-HEROKU-SLUG-NAME",
+      "required": true,
+      "value": "https://YOUR-HEROKU-SLUG-NAME.herokuapp.com/packs"
+    },
+    "GIT_COMMIT": {
+      "description": "the current git commit SHA that corresponds to the 'revision' parameter in the honeybadger-js configuration",
+      "required": false,
+      "value": "master"
     }
-  }
+  },
+  "addons": [
+    "honeybadger"
+  ]
 }

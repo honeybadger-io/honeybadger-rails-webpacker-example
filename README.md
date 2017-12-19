@@ -17,8 +17,12 @@ with the Heroku Button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-Note that once launched you will need to  set up your environment variables for
-Heroku per the instructions in the `Heroku / 12-factor app` section.
+Note that if you utilize the [honeybadger Heroku
+addon](https://elements.heroku.com/addons/honeybadger) the addon will establish
+and set the `HONEYBADGER_API_KEY` for your environment. You will also need to
+set your `ASSETS_URL` environment variable; it corresponds to the `assetsUrl`
+variable used to configure the [Honeybadger Webpack Source Map
+Plugin](https://github.com/honeybadger-io/honeybadger-webpack).
 
 ## Slightly Less Quick Start
 
@@ -60,11 +64,12 @@ app using ENV VARs as in the .env example) given these deployment notes.
 ### `GIT_COMMIT`
 
 In the example `app/javascript/src/main.js` the `revision` variable used in the
-call to the Honeybadger API is sourced via an environment variable `GIT_COMMIT`.
-When Webpacker minifies the JavaScript it will use the value of that variable
-from the local environment it is run in. Should your implementation follow this
-pattern you will have to ensure a means of setting the current commit SHA in
-your deployment environment.
+call to the Honeybadger API by honeybadger-js is sourced via an environment
+variable `GIT_COMMIT`.  When Webpacker minifies the JavaScript it will use the
+value of that variable from the local environment it is run in. Should your
+implementation follow this pattern you will have to ensure a means of setting
+the current commit SHA in your deployment environment. The default value for
+`revision` is `master`.
 
 ### `HONEYBADGER_API_KEY`
 
@@ -74,7 +79,11 @@ call to the Honeybadger API is sourced via an environment variable
 environment configuration of the Honeybadger Webpack plugin in
 `config/webpack/environment.js`
 
-Set your Honeybadger API key in your app's Heroku environment:
+Note that if you utilize the [honeybadger Heroku
+addon](https://elements.heroku.com/addons/honeybadger) the addon will establish
+and set the `HONEYBADGER_API_KEY` for you rather than managing it by hand.
+
+Otherwise, set your Honeybadger API key in your app's Heroku environment:
 
 ```sh
 heroku config:set HONEYBADGER_API_KEY=abc123
@@ -93,7 +102,6 @@ Set `ASSETS_URL` to your applications base application directory:
 ```sh
 heroku config:set ASSETS_URL=http://my-example.herokuapp.com/packs
 ```
-
 
 ## NOTES
 
