@@ -1,0 +1,8 @@
+---
+report_data: true
+debug: true
+logging:
+  path: STDOUT
+  level: debug
+exceptions:
+  rescue_rake: true
