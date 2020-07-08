@@ -108,7 +108,7 @@ heroku config:set ASSETS_URL=http://my-example.herokuapp.com/packs
 See `config/webpack/development.js`: Webpacker's default `devtool` setting of
 `cheap-eval-source-map` will cause CORs related errors in the development
 environment when exceptions are sent to Honeybadger. The value is changed to
-`cheap-eval-source-map` to overcome that.
+`source-map` to overcome that.
 
 
 ## Development
