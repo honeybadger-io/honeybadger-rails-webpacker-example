@@ -9,6 +9,6 @@
     "honeybadger-js": "^0.5.2"
   },
   "devDependencies": {
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.11.5"
   }
 }
